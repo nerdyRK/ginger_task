@@ -65,12 +65,12 @@ app.post("/register", (req, res) => {
 
 app.post("/login", (req, res) => {
     
-  let name = req.body.name;
+  let name = req.body.email;
   // console.log(name);
   let password = req.body.password;
   db.query(
     // "SELECT * FROM users WHERE name=? AND password=?",
-    "SELECT * FROM users WHERE name=?",
+    "SELECT * FROM users WHERE email=?",
     name,
     (err, result) => {
       if (err) console.log(err);

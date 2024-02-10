@@ -6,7 +6,7 @@ function Login() {
   let [data, setData] = useContext(UserContext);
 
   const [formData, setFormData] = useState({
-    name: "",
+    email: "",
     password: "",
   });
   let navigate = useNavigate();
@@ -37,13 +37,12 @@ function Login() {
       const data = await response.json();
 
       if (data.msg) {
-        setMessage(data.msg); // Set the message state to display the error
+        setMessage(data.msg);
       } else {
         console.log("Logged in successfully:", data);
         navigate("/dashboard");
         setMessage("Logged in successfully:", data);
         setData(data);
-        // Redirect or set a state to indicate logged in status
       }
     } catch (error) {
       console.error("Error:", error);
@@ -56,11 +55,11 @@ function Login() {
       <h2>Login Page</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Username:</label>
+          <label>email:</label>
           <input
-            type="text"
-            name="name"
-            value={formData.name}
+            type="email"
+            name="email"
+            value={formData.email}
             onChange={handleChange}
             required
           />

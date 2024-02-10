@@ -123,13 +123,19 @@ table {
   border: 1px solid white;
   border-collapse: separate;
   font-size: larger;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 
 table th,
 tr,
 td {
-  padding: 4px;
+  padding: 14px;
 }
 
 tr,
